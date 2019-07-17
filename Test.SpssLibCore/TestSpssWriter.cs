@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using SpssLib.DataReader;
@@ -23,6 +23,7 @@ namespace Test.SpssLibCore
                                                   {
                                                       {1, "Label for 1"},
                                                       {2, "Label for 2"},
+                                                      {3,"Travail rémunéré, non précisé" }
                                                   },
                                     PrintFormat = new OutputFormat(FormatType.F, 8, 2),
                                     WriteFormat = new OutputFormat(FormatType.F, 8, 2),
@@ -62,16 +63,18 @@ namespace Test.SpssLibCore
                     newRecord[0] = null;
                     newRecord[1] = 200d;
                     writer.WriteRecord(newRecord);
+                    newRecord = writer.CreateRecord();
+                    newRecord[0] = 3d;
+                    newRecord[1] = 1d;
+                    writer.WriteRecord(newRecord);
                     writer.EndFile();
                 }
             }
 
-            int varCount;
-            int rowCount;
-            ReadFile(filename, out varCount, out rowCount);
+            ReadFile(filename, out int varCount, out int rowCount);
 
             Assert.True(varCount == 2, "Variable count does not match");
-            Assert.True(rowCount == 2, "Rows count does not match");
+            Assert.True(rowCount == 3, "Rows count does not match");
         }
 
         [Fact]
@@ -180,9 +183,7 @@ namespace Test.SpssLibCore
                 }
             }
 
-            int varCount;
-            int rowCount;
-            ReadFile(filename, out varCount, out rowCount);
+            ReadFile(filename, out int varCount, out int rowCount);
 
             Assert.True(varCount == 4, "Variable count does not match");
             Assert.True(rowCount == 3, "Rows count does not match");
@@ -286,9 +287,7 @@ namespace Test.SpssLibCore
                 }
             }
 
-            int varCount;
-            int rowCount;
-            ReadFile(filename, out varCount, out rowCount);
+            ReadFile(filename, out int varCount, out int rowCount);
 
             Assert.True(varCount == 4, "Variable count does not match");
             Assert.True(rowCount == 3, "Rows count does not match");
@@ -427,8 +426,7 @@ namespace Test.SpssLibCore
             FileStream readFileStream = new FileStream(filename, FileMode.Open, FileAccess.Read,
                 FileShare.Read, 2048 * 10, FileOptions.SequentialScan);
 
-            int varCount, rowCount;
-            TestSpssReader.ReadData(readFileStream, out varCount, out rowCount);
+            TestSpssReader.ReadData(readFileStream, out int varCount, out int rowCount);
 
             Assert.True(varCount == 6, "Variable count does not match");
             Assert.True(rowCount == 1, "Rows count does not match");

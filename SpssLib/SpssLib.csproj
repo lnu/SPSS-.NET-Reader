@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SpssLib</PackageId>
+    <Company>TNS</Company>
+    <Version>1.2.0</Version>
+    <Description>A library for reading and writing .sav files</Description>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/TNSGlobal/SPSS-.NET-Reader</PackageProjectUrl>
+    <PackageIconUrl>http://www.tnsglobal.com/sites/default/files/tns-logo.jpg</PackageIconUrl>
+    <Authors>Roeland Nieuwenhuis, Francisco Biagi</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/TNSGlobal/SPSS-.NET-Reader/releases</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
