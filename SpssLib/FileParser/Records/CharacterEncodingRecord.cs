@@ -85,6 +85,7 @@ namespace SpssLib.FileParser.Records
                 info = encInfo.SingleOrDefault(ei => ei.CodePage == cp);
                 if (info != null)
                     return info.GetEncoding();
+                return CodePagesEncodingProvider.Instance.GetEncoding(strEncoding);
             }
             
             if (strEncoding.Equals("windows-31j", StringComparison.InvariantCultureIgnoreCase))

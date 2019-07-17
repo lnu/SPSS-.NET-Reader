@@ -63,7 +63,14 @@ namespace SpssLib.FileParser.Records
                     default: // Other, look by codepage
                         try
                         {
-                            return Encoding.GetEncoding(CharacterCode);
+                            try
+                            {
+                                return Encoding.GetEncoding(CharacterCode);
+                            }
+                            catch (NotSupportedException)
+                            {
+                                return CodePagesEncodingProvider.Instance.GetEncoding(CharacterCode);
+                            }
                         }
                         catch (ArgumentException ex)
                         {
