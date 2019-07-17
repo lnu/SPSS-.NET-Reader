@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,10 +9,14 @@
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/TNSGlobal/SPSS-.NET-Reader</PackageProjectUrl>
     <PackageIconUrl>http://www.tnsglobal.com/sites/default/files/tns-logo.jpg</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/lnu/SPSS-.NET-Reader/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>SPSS PSPP SAV</PackageTags>
     <Authors>Roeland Nieuwenhuis, Francisco Biagi</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/lnu/SPSS-.NET-Reader</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>https://github.com/TNSGlobal/SPSS-.NET-Reader/releases</PackageReleaseNotes>
+    <AssemblyTitle>SpssLib</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>
