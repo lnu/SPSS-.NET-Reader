@@ -17,6 +17,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>https://github.com/TNSGlobal/SPSS-.NET-Reader/releases</PackageReleaseNotes>
     <AssemblyTitle>SpssLib</AssemblyTitle>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
